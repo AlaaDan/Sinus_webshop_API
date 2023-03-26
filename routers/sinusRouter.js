@@ -4,7 +4,6 @@ const products = require('../products.json')
 
 
 router.get('/', (request, response)=>{
-    
     response.json(products)
 })
 
