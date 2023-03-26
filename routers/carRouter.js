@@ -26,9 +26,9 @@ router.post('/', (req, res)=>{
 })
 
 router.delete('/', (req, res)=>{
-    const serial = cartItems.find(c => c.serial === req.body);
-    if (!serial) return res.status(404).send("The course with the given ID was not found")
-
+    const serial = cartItems.find(s => s.serial === String(req.body.serial));
+    if (!serial) return res.status(404).send("The serial number was not found")
+    
     const index = cartItems.indexOf(serial)
     cartItems.splice(index, 1)
 
